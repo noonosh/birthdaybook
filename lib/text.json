@@ -1,0 +1,51 @@
+{
+	"text": {
+		"chooseLanguage": {
+			"en": "Choose a language of your preference",
+			"ru": "Выберите язык",
+			"uz": "Tilni tanlang"
+		},
+		"greeting": {
+			"en": "Hi there. You are really welcomed in the birthday book bot",
+			"uz": "Salom!",
+			"ru": "Привет!"
+		},
+		"nameRequest": {
+			"en": "What is your name?",
+			"ru": "Kak tvoe imya?",
+			"uz": "Isming nedur?"
+		},
+		"quickRegister": {
+			"en": "Hooray! Start saving friends' birth dates now!",
+			"ru": "Ura",
+			"uz": "Molodes. Bos gazini"
+		}
+	},
+	"button": {
+		"language": {
+			"en": "🇬🇧 English",
+			"ru": "🇷🇺 Русский",
+			"uz": "🇺🇿 O'zbek tili"
+		},
+		"myFriends": {
+			"en": "👥 My Friends",
+			"ru": "",
+			"uz": ""
+		},
+		"mySettings": {
+			"en": "📝 My Info",
+			"ru": "",
+			"uz": ""
+		},
+		"inviteFriend": {
+			"en": "📨 Invite a friend",
+			"ru": "",
+			"uz": ""
+		},
+		"addBirthday": {
+			"en": "🎉 Add a birthday",
+			"ru": "",
+			"uz": ""
+		}
+	}
+}
