@@ -9,6 +9,7 @@ from telegram import Update
 from core.home import Home
 from core.command import Command
 from core.register import Register
+from lib.filter import FilterButton
 import os
 import dotenv
 import logging
@@ -17,7 +18,7 @@ import logging
 dotenv.load_dotenv()
 
 # Debugging configuration
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.environ.get('DEBUG', False) == 'True'
 
 # Enable logging
 logging.basicConfig(
@@ -47,6 +48,9 @@ def main():
             ],
             "NAME REQUESTED": [
                 MessageHandler(Filters.text, register.save_name)
+            ],
+            "HOME": [
+                MessageHandler(FilterButton("addBirthday"), home.add_birthday)
             ]
         },
         fallbacks=[]
