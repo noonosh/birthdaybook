@@ -39,8 +39,15 @@ class Register():
         data = query.data
         logging.info("%s - Language preferences saved", chat_id)
         query.answer()
+        query.delete_message()
 
-    def name_request(self, update: Update, context: CallbackContext):
+        cursor.execute("UPDATE users SET language_code = '{}' WHERE id = '{}'"
+                       .format(data, chat_id))
+        connection.commit()
+        update.effective_message.reply_text("Great!")
+        return self.request_name(update, context)
+
+    def request_name(self, update: Update, context: CallbackContext):
         chat_id = update.effective_chat.id
         language = lang(chat_id)
 
@@ -54,7 +61,8 @@ class Register():
         name = update.message.text
 
         cursor.execute(
-            "UPDATE users SET first_name = '{}' WHERE id = '{}'".format(chat_id))
+            "UPDATE users SET first_name = '{}' WHERE id = '{}'".format(name, chat_id))
+        connection.commit()
 
         return self.quick_registration_complete(update, context)
 
